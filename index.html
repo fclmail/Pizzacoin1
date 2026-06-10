@@ -1,1 +1,345 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Pizza Coin Wallet Connect</title> <style> body{ margin:0; padding:0; background:#000; display:flex; justify-content:center; align-items:center; height:100vh; font-family:Arial,sans-serif; color:white; } .container{ width:95%; max-width:700px; text-align:center; } h1{ font-size:60px; font-weight:bold; margin-bottom:50px; } button{ width:100%; padding:25px; font-size:28px; font-weight:bold; border:none; border-radius:15px; cursor:pointer; background:#ff9800; color:white; } button:hover{ opacity:.9; } #wallet{ margin-top:40px; font-size:24px; word-break:break-all; } .connected{ color:#00ff00; font-weight:bold; font-size:30px; margin-bottom:20px; } </style> </head> <body> <div class="container"> <h1> 🍕 PIZZA COIN 🍕 </h1> <button id="connectButton"> 🔗 CONNECT POLYGON WALLET </button> <div id="wallet"> Not Connected </div> </div> <script> const button=document.getElementById("connectButton"); const wallet=document.getElementById("wallet"); button.onclick=async()=>{ if(typeof window.ethereum==="undefined"){ wallet.innerHTML="No Wallet Detected"; return; } try{ const accounts=await window.ethereum.request({ method:"eth_requestAccounts" }); wallet.innerHTML= "<div class='connected'>✅ CONNECTED</div>"+ accounts[0]; } catch(err){ wallet.innerHTML="Connection Cancelled"; } }; </script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pizza Coin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#050505;
+
+font-family:Orbitron,sans-serif;
+
+color:white;
+
+text-align:center;
+
+overflow-x:hidden;
+
+}
+
+/* Floating Pizza Emojis */
+
+.emoji{
+
+position:fixed;
+
+font-size:45px;
+
+animation:float 10s linear infinite;
+
+opacity:.8;
+
+pointer-events:none;
+
+}
+
+.e1{left:5%;top:10%;animation-delay:0s;}
+.e2{left:20%;top:70%;animation-delay:2s;}
+.e3{left:40%;top:30%;animation-delay:4s;}
+.e4{left:65%;top:80%;animation-delay:6s;}
+.e5{left:85%;top:20%;animation-delay:8s;}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px) rotate(0deg);
+
+}
+
+50%{
+
+transform:translateY(-80px) rotate(180deg);
+
+}
+
+100%{
+
+transform:translateY(0px) rotate(360deg);
+
+}
+
+}
+
+.container{
+
+max-width:900px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+/* Neon Title */
+
+h1{
+
+font-size:80px;
+
+font-weight:900;
+
+color:#ffb300;
+
+text-shadow:
+
+0 0 10px #ff9800,
+
+0 0 20px #ff9800,
+
+0 0 40px #ff9800,
+
+0 0 80px #ff5722;
+
+margin-bottom:10px;
+
+}
+
+.subtitle{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#00ffcc;
+
+text-shadow:
+
+0 0 10px cyan,
+
+0 0 30px cyan;
+
+margin-bottom:35px;
+
+}
+
+img{
+
+width:100%;
+
+max-width:650px;
+
+border-radius:30px;
+
+box-shadow:
+
+0 0 20px orange,
+
+0 0 50px red,
+
+0 0 100px gold;
+
+margin-bottom:40px;
+
+}
+
+.card{
+
+background:#111;
+
+border:3px solid orange;
+
+border-radius:25px;
+
+padding:35px;
+
+box-shadow:
+
+0 0 20px orange,
+
+0 0 50px red;
+
+}
+
+label{
+
+display:block;
+
+font-size:24px;
+
+font-weight:bold;
+
+text-align:left;
+
+margin-top:25px;
+
+margin-bottom:10px;
+
+color:#ffd54f;
+
+}
+
+input{
+
+width:100%;
+
+padding:20px;
+
+font-size:20px;
+
+border-radius:15px;
+
+border:none;
+
+outline:none;
+
+background:#222;
+
+color:white;
+
+border:2px solid orange;
+
+}
+
+input:focus{
+
+box-shadow:
+
+0 0 20px orange;
+
+}
+
+button{
+
+margin-top:40px;
+
+width:100%;
+
+padding:25px;
+
+font-size:34px;
+
+font-weight:900;
+
+border:none;
+
+border-radius:20px;
+
+cursor:pointer;
+
+background:linear-gradient(90deg,#ff9800,#ff5722);
+
+color:white;
+
+box-shadow:
+
+0 0 20px orange,
+
+0 0 40px red;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.03);
+
+box-shadow:
+
+0 0 40px orange,
+
+0 0 80px red;
+
+}
+
+.footer{
+
+margin-top:40px;
+
+font-size:18px;
+
+color:#ccc;
+
+line-height:1.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="emoji e1">🍕</div>
+<div class="emoji e2">🍕</div>
+<div class="emoji e3">🍕</div>
+<div class="emoji e4">🍕</div>
+<div class="emoji e5">🍕</div>
+
+<div class="container">
+
+<h1>PIZZA COIN</h1>
+
+<div class="subtitle">
+
+FREE PIZZA 🍕<br><br>
+
+BUY PIZZA COIN 🪙
+
+</div>
+
+<img src="pizza-bitcoin.png" alt="Pizza Coin">
+
+<div class="card">
+
+<label>
+
+📧 Enter your Email
+
+</label>
+
+<input
+type="email"
+placeholder="This is where you will instantly receive your electronic Pizza Gift Card and your receipt 🧾">
+
+<label>
+
+🪙 Enter your Polygon Wallet Address
+
+</label>
+
+<input
+type="text"
+placeholder="This is where you will instantly receive your Pizza Coin 🪙">
+
+<button>
+
+🚀 BUY PIZZA COIN 🍕
+
+</button>
+
+</div>
+
+<div class="footer">
+
+🔥 Instant Pizza Coin Delivery<br><br>
+
+🍕 Instant Electronic Pizza Gift Card Delivery<br><br>
+
+🧾 Instant Receipt Sent To Your Email<br><br>
+
+🔒 Secure Polygon Blockchain Transactions
+
+</div>
+
+</div>
+
+</body>
+
+</html>
